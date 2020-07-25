@@ -1,6 +1,13 @@
 package com.propositodigital.quake.quakeparse.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 //import com.google.gson.Gson;
 //import com.google.gson.GsonBuilder;
@@ -8,8 +15,32 @@ import javax.persistence.Entity;
 @Entity
 public class Player {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String nickName;
 	private int score;
+	
+	@ManyToMany(mappedBy = "players")
+	private List<Game> games;
+	
+	public Player() {} // REQUISITO DO JPA
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public List<Game> getGames() {
+		return games;
+	}
+
+	public void setGames(List<Game> games) {
+		this.games = games;
+	}
 
 	public Player(String nickName) {
 		this.nickName = nickName;

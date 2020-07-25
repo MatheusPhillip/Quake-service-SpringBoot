@@ -1,26 +1,50 @@
 package com.propositodigital.quake.quakeparse.models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 //import com.google.gson.Gson;
 //import com.google.gson.GsonBuilder;
 
 @Entity
 public class Game{
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private int total_kills;
 	private int worldScore;
-	private int id;
-	private ArrayList<Player> players = new ArrayList<Player>();
+	
+	@ManyToMany
+	private List<Player> players;
 	
 	
+	public Game() {} // REQUISITO DO JPA
+	
+	public void setPlayers(List<Player> players) {
+		this.players = players;
+	}
+
 	public Game(int id) {
 		this.total_kills = 0; // INICIALIZA A QUANTIDADE TOTAL DE MORTES NO JOGO COM 0
 		this.worldScore = 0;  // INICIALIZA A PONTUAÇÃO DE MORTES PELO CENÁRIO COM 0
 		this.id = id;
 	}
+	
 
+	public void setTotal_kills(int total_kills) {
+		this.total_kills = total_kills;
+	}
+
+	public void setWorldScore(int worldScore) {
+		this.worldScore = worldScore;
+	}
 
 	public int getTotal_kills() {
 		return total_kills;
@@ -51,8 +75,7 @@ public class Game{
 		this.id = id;
 	}
 
-
-	public ArrayList<Player> getPlayers() {
+	public List<Player> getPlayers() {
 		return players;
 	}
 
@@ -60,6 +83,7 @@ public class Game{
 	public void setPlayers(ArrayList<Player> players) {
 		this.players = players;
 	}
+	
 	
 	// ADICIONA UM JOGADOR NA LISTA DE JOGADORES DESTE JOGO
 	public void addPlayer(Player player) {
