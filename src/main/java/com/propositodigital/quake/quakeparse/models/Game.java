@@ -11,14 +11,14 @@ import javax.persistence.Entity;
 public class Game{
 	private int total_kills;
 	private int worldScore;
-	private String id;
+	private int id;
 	private ArrayList<Player> players = new ArrayList<Player>();
 	
 	
 	public Game(int id) {
 		this.total_kills = 0; // INICIALIZA A QUANTIDADE TOTAL DE MORTES NO JOGO COM 0
 		this.worldScore = 0;  // INICIALIZA A PONTUAÇÃO DE MORTES PELO CENÁRIO COM 0
-		this.id = "game_"+ id;
+		this.id = id;
 	}
 
 
@@ -42,12 +42,12 @@ public class Game{
 	}
 
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -157,7 +157,7 @@ public class Game{
 	
 	@Override
 	public String toString() {
-		return id + ": {\n" 
+		return "game_" + id + ": {\n" 
 				  + "\t" + "total_kills: " + total_kills + ";\n" 
 				  + "\t" + toStringPlayers() +"\n"
 				  + "\t" + toStringPlayersScore()
