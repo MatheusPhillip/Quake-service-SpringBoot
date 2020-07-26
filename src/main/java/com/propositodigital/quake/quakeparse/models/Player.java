@@ -1,16 +1,11 @@
 package com.propositodigital.quake.quakeparse.models;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 
-//import com.google.gson.Gson;
-//import com.google.gson.GsonBuilder;
 
 @Entity
 public class Player {
@@ -19,12 +14,8 @@ public class Player {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nickName;
-	private int score;
+	private int score;	
 	
-	/*
-	@ManyToMany(mappedBy = "players")
-	private List<Game> games;
-	*/
 	public Player() {} // REQUISITO DO JPA
 
 	public int getId() {
@@ -34,15 +25,7 @@ public class Player {
 	public void setId(int id) {
 		this.id = id;
 	}
-	/*
-	public List<Game> getGames() {
-		return games;
-	}
-
-	public void setGames(List<Game> games) {
-		this.games = games;
-	}
-	*/
+	
 	public Player(String nickName) {
 		this.nickName = nickName;
 		this.score = 0; // INICIALIZA A PONTUAÇÃO DO JOGADOR COM 0
@@ -80,6 +63,9 @@ public class Player {
 		return "\"" + nickName + "\"";
 	}
 	
+	/*
+	 *  IMPRIME A PONTUAÇÃO DO JOGADOR
+	 */
 	public String toStringPlayerScore() {
 		return toString() + ": " + getScore();
 	}

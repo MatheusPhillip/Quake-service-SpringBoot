@@ -103,7 +103,6 @@ public class QuakeParse {
 	private void parseKillByWorld(String line) {
 		for(int i = 0; i < game.getPlayers().size(); i++) {
 			if(line.contains(game.getPlayers().get(i).getNickName())) {			// PROCURA O NOME DO JOGADOR NA LINHA USANDO A LISTA DE JOGADORES
-				//game.getPlayers().get(i).getNickName();
 				game.MeanOfDeath(line, game.getPlayers().get(i).getNickName()); // INFORMA O MOTIVO DA MORTE DO JOGADOR
 				game.getPlayers().get(i).addDeathByWorld();						// ATUALIZA PONTUAÇÃO DO JOGADOR DEVIDO MORTE POR CENÁRIO
 				game.addWorldScore();											// INCREMENTA A PONTUAÇÃO DE MORTES POR CENÁRO
@@ -131,11 +130,9 @@ public class QuakeParse {
 			if(subString[0].contains(game.getPlayers().get(i).getNickName())) { // CHECA SE O NOME DO JOGADOR ESTÁ A ESQUERDA DE KILLED
 				playerName = game.getPlayers().get(i).getNickName();			// ATRIBUE O NOME DO JOGADOR QUE MATOU A PLAYERNAME
 				game.getPlayers().get(i).addScore();							// INCREMENTA A PONTUAÇÃO DESSE JOGADOR
-				//break;
 			}
 			if(subString[1].contains(game.getPlayers().get(i).getNickName())) { // CHECA SE O NOME DO JOGADOR ESTÁ A DIREITA DE KILLED
 				playerKilledName = game.getPlayers().get(i).getNickName();		// ATRIBUE O NOME DO JOGADOR QUE MORREU A PLAYERKILLEDNAME
-				//break;
 			}
 		}
 		game.addTotal_killsScore();												// INCREMENTA O NÚMERO TOTAL DE MORTES NO JOGO

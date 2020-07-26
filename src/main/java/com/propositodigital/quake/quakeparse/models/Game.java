@@ -172,15 +172,6 @@ public class Game{
 		}
 	}
 	
-	/*
-	@Override
-	public String toString() {
-		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return getId() + ": " + gson.toJson(this);
-		//return "Game [id=" + id + ", players=" + players.toString() + "total_kills=" + total_kills + ", worldScore=" + worldScore +"]";
-	}
-	*/
-	
 	@Override
 	public String toString() {
 		return "game_" + id + ": {\n" 
@@ -190,10 +181,16 @@ public class Game{
 				  + "}";
 	}
 	
+	/*
+	 *  IMPRIME OS JOGADORES DE MANEIRA ORGANIZADA
+	 */
 	private String toStringPlayers() {
 		return "players: " + players.toString();
 	}
 	
+	/*
+	 *  IMPRIME A PONTUAÇÃO DE CADA JOGADOR DE FORMA ORGANIZADA
+	 */
 	private String toStringPlayersScore() {
 		String score = "kills: {\n";
 		for(int i = 0; i < players.size(); i++) {
