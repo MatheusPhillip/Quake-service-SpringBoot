@@ -39,6 +39,7 @@ spring.datasource.password=SENHA
 - Inicializando o projeto: <br />
 __Passo 1__ <br />
 Inicialize o projeto através da classe principal: `QuakeparseApplication.java` <br />
+Após a inicialização será criada uma base de dados denominada __quakegames__ no MySQL.
 
 - Buscar um jogo por ID: <br />
 __Passo 1__ <br />
