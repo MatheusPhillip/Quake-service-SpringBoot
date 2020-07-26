@@ -6,7 +6,6 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.propositodigital.quake.quakeparse.models.Game;
@@ -34,12 +33,8 @@ public class QuakeparseApplication implements CommandLineRunner{
 			String path = file.getAbsolutePath();
 			QuakeParse parse = new QuakeParse(path);
 			for(Game game : parse.getGames()) {
-				//games.put(game.getId(), game);
-				//games.add(game);
-				//bubbleSortPlayersScore(game.getPlayers());
 				gameRepository.save(game);
 			}
-			//sortGamesById();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
