@@ -3,6 +3,7 @@ package com.propositodigital.quake.quakeparse.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,7 @@ public class Game{
 	private int total_kills;
 	private int worldScore;
 	
-	@ManyToMany
+	@ManyToMany(cascade=CascadeType.ALL)
 	private List<Player> players;
 	
 	
@@ -32,6 +33,7 @@ public class Game{
 	}
 
 	public Game(int id) {
+		players = new ArrayList<Player>();
 		this.total_kills = 0; // INICIALIZA A QUANTIDADE TOTAL DE MORTES NO JOGO COM 0
 		this.worldScore = 0;  // INICIALIZA A PONTUAÇÃO DE MORTES PELO CENÁRIO COM 0
 		this.id = id;
