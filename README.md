@@ -27,7 +27,8 @@ game_1: {
 __Passo 1__ <br />
 Abra o arquivo `application.properties` localizado na pasta: `\Quake-service-SpringBoot\src\main\resources` <br />
 __Passo 2__ <br />
-Na linha __1__ informe a URL do seu banco de dados, como: `jdbc:mysql://localhost:3306`/quakegames?createDatabaseIfNotExist=true&useSSL=false&useTimezone=true&serverTimezone=UTC
+Na linha __1__ informe a URL do seu banco de dados, por exemplo: <br />
+`jdbc:mysql://localhost:3306`/quakegames?createDatabaseIfNotExist=true&useSSL=false&useTimezone=true&serverTimezone=UTC <br />
 __Passo 3__ <br />
 Nas linhas __3__ e __4__ informe seu usuário e senha do banco de dados, por exemplo: <br />
 ```
