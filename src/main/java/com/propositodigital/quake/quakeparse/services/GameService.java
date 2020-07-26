@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.propositodigital.quake.quakeparse.models.Game;
+import com.propositodigital.quake.quakeparse.models.Player;
 import com.propositodigital.quake.quakeparse.repositories.GameRepository;
 
 @Service
@@ -19,6 +20,9 @@ public class GameService {
 			return ResponseEntity.badRequest().body("Error: Game não encontrado.");
 		}
 		// GAME ENCONTRADO
+		for (Player player : game.getPlayers()) {
+			player.setGames(null);
+		}
 		return ResponseEntity.ok(game);
 	}
 }
