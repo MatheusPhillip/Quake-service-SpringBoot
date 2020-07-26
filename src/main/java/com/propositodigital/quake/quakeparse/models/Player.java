@@ -21,9 +21,10 @@ public class Player {
 	private String nickName;
 	private int score;
 	
+	/*
 	@ManyToMany(mappedBy = "players")
 	private List<Game> games;
-	
+	*/
 	public Player() {} // REQUISITO DO JPA
 
 	public int getId() {
@@ -33,7 +34,7 @@ public class Player {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	/*
 	public List<Game> getGames() {
 		return games;
 	}
@@ -41,7 +42,7 @@ public class Player {
 	public void setGames(List<Game> games) {
 		this.games = games;
 	}
-
+	*/
 	public Player(String nickName) {
 		this.nickName = nickName;
 		this.score = 0; // INICIALIZA A PONTUAÇÃO DO JOGADOR COM 0

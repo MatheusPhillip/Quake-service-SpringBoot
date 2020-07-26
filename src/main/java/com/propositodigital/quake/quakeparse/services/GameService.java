@@ -20,9 +20,11 @@ public class GameService {
 			return ResponseEntity.badRequest().body("Error: Game não encontrado.");
 		}
 		// GAME ENCONTRADO
+		/*
 		for (Player player : game.getPlayers()) {
 			player.setGames(null);
 		}
+		*/
 		return ResponseEntity.ok(game);
 	}
 }
