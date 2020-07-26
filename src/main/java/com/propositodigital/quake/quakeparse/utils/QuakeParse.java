@@ -17,18 +17,14 @@ public class QuakeParse {
 	private ArrayList<Game> games = new ArrayList<Game>();
 	private Game game;
 	private Player player;
-	private GameFile gameFile = new GameFile();
-	private String fileName = "games_parse.txt";
 	
 	public QuakeParse(String path) throws FileNotFoundException, IOException {
 		File file = new File(path); 
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String st; 
-			gameFile.openToWrite(fileName);
 			while ((st = br.readLine()) != null) { 
 			    parseLine(st);
 			}
-			gameFile.closeAfterWrite();
 		} 
 	}
 	
@@ -64,7 +60,6 @@ public class QuakeParse {
 			this.games.add(game);						// ADICIONA O ÚLTIMO JOGO NA LISTA DE JOGOS
 			this.gameCounter++;							// INCREMENTA O CONTADOR DE JOGOS
 			printGame();                                // EXIBE AS INFORMAÇÕES DO JOGO ENCERRADO
-			saveGameInFile();
 			game = new Game(this.gameCounter);			// INSTANCIA UM NOVO JOGO
 			System.out.println("game_" + this.gameCounter + " iniciado.");
 			this.gameInProgress = true;
@@ -99,7 +94,6 @@ public class QuakeParse {
 		this.games.add(game);							// ADICIONA O JOGO NA LISTA DE JOGOS
 		this.gameInProgress = false;					// ATRIBUE FALSO A JOGO EM ANDAMENTO
 		printGame();                                	// EXIBE AS INFORMAÇÕES DO JOGO ENCERRADO
-		saveGameInFile();
 	}
 	
 	/*
@@ -160,12 +154,6 @@ public class QuakeParse {
 	 */
 	private void printGame() {
 		System.out.println(game.toString());
-	}
-	
-	private void saveGameInFile() {
-		if(game != null) {
-			gameFile.saveGame(game);
-		}
 	}
 	
 }

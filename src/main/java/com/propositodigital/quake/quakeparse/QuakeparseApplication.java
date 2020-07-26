@@ -1,5 +1,6 @@
 package com.propositodigital.quake.quakeparse;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,9 @@ public class QuakeparseApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		try {
-			QuakeParse parse = new QuakeParse("C:\\Users\\Matheus\\Documents\\PropositoDigital\\QuakeProject\\games.log");
+			File file = new File("games.log");
+			String path = file.getAbsolutePath();
+			QuakeParse parse = new QuakeParse(path);
 			for(Game game : parse.getGames()) {
 				//games.put(game.getId(), game);
 				//games.add(game);
