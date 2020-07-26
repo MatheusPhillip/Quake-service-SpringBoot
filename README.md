@@ -1,7 +1,7 @@
-# Quake Arena 3 Parser Com Spring Boot
-> Este projeto visa lêr o conteúdo do arquivo games.log,
-> identificando e categorizando suas informações.
-> Para cada jogo encontrado ele exibirá algo como:
+# Quake Arena 3 Parser Utilizando Spring Boot
+> Este projeto tem como objetivo a construção de uma API 
+> para realização de busca de um determinado jogo por ID.
+> Um jogo possue essas características:
 ```
 game_1: {
     total_kills: 45;
