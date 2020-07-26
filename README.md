@@ -14,6 +14,13 @@ game_1: {
   }
 ```
 ---
+## Solução Proposta
+> Este projeto tem como base https://github.com/MatheusPhillip/quake-service.
+> É basicamente o mesmo projeto, mas adaptado com as normas e organização do Spring Boot,
+> por isso decidi criar este novo projeto. 
+> Optei por utilizar o Spring Boot, pois eu tinha um pouco de familiaridade. 
+> E optei pelo uso do MySQL, pois já tinha trabalhado com ele. 
+---
 ## Instalação
 ## Clone
 - Clone este repositório em sua máquina local usando o link: `https://github.com/MatheusPhillip/Quake-service-SpringBoot.git`
