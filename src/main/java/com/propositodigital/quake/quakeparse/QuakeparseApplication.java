@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.propositodigital.quake.quakeparse.models.Game;
@@ -14,6 +15,7 @@ import com.propositodigital.quake.quakeparse.utils.QuakeParse;
 
 
 @SpringBootApplication
+//@EnableAutoConfiguration
 public class QuakeparseApplication implements CommandLineRunner{
 	
 	@Autowired
